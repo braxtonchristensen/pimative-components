@@ -1,0 +1,12 @@
+patch-package
+--- a/node_modules/@skpm/builder/lib/utils/babelLoader.js
++++ b/node_modules/@skpm/builder/lib/utils/babelLoader.js
+@@ -33,7 +33,7 @@ function babelLoader(userDefinedBabelConfig) {
+ }
+ 
+ exports.default = skpmConfig => {
+-  const babelrcPath = _path2.default.join(process.cwd(), '.babelrc');
++  const babelrcPath = false;
+   let userDefinedBabelConfig = null;
+   try {
+     if (_fs2.default.existsSync(babelrcPath)) {

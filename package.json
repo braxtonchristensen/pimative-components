@@ -2,13 +2,33 @@
   "name": "empty-project-template",
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
+  "skpm": {
+    "main": "test.sketchplugin",
+    "manifest": "src/manifest.json",
+    "babel": {}
+  },
   "scripts": {
+    "build": "skpm-build",
+    "watch": "skpm-build --watch",
+    "render": "skpm-build --watch --run",
+    "render:once": "skpm-build --run",
+    "postinstall": "patch-package",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject",
-    "storybook": "storybook start",
+    "storybook:native": "storybook start & yarn ios",
+    "prestorybook:native": "rnstl",
     "storybook:web": "start-storybook -p 9001 -c .storybook"
+  },
+  "config": {
+    "react-native-storybook-loader": {
+      "searchDir": [
+        "./components"
+      ],
+      "pattern": "**/native.stories.js",
+      "outputFile": "./native-storybook/storyLoader.js"
+    }
   },
   "dependencies": {
     "@storybook/react": "^3.4.11",
@@ -17,9 +37,11 @@
     "react-art": "16.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
     "react-primitives": "^0.6.1",
-    "react-sketchapp": "^2.1.1"
+    "react-sketchapp": "^2.1.1",
+    "react-test-renderer": "^16.5.2"
   },
   "devDependencies": {
+    "@skpm/builder": "^0.5.10",
     "@storybook/addon-actions": "^4.0.0-alpha.25",
     "@storybook/addon-links": "^4.0.0-alpha.25",
     "@storybook/addons": "^4.0.0-alpha.25",
@@ -27,6 +49,7 @@
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
     "prop-types": "^15.6.2",
-    "react-dom": "16.3.1"
+    "react-dom": "16.3.1",
+    "react-native-storybook-loader": "^1.8.0"
   }
 }
