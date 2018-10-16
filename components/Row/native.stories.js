@@ -1,6 +1,6 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import Row from '../components/Row';
+import { storiesOf } from '@storybook/react-native';
+import Row from '.';
 
 storiesOf('Row', module)
   .add('default', () => (

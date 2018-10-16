@@ -1,0 +1,21 @@
+{
+  "compatibleVersion": 1,
+  "bundleVersion": 1,
+  "commands": [
+    {
+      "name": "react-sketchapp: Test w/ Primitives",
+      "identifier": "main",
+      "script": "main.js"
+    }
+  ],
+  "menu": {
+    "isRoot": true,
+    "items": [
+      "main"
+    ]
+  },
+  "name": "empty-project-template",
+  "identifier": "empty-project-template",
+  "disableCocoaScriptPreprocessor": true,
+  "appcast": "https://raw.githubusercontent.com//master/.appcast.xml"
+}
